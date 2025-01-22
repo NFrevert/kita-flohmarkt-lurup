@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Stelle sicher, dass die Node.js-Version zu deiner App passt
+          node-version: '20'  # Stelle sicher, dass die Node.js-Version zu deiner App passt
 
       - name: Install dependencies
         run: |
