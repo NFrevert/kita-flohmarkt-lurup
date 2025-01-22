@@ -29,6 +29,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: main  # Branch für GitHub Pages
+          branch: gh-pages  # Branch für GitHub Pages
           folder: dist/kita-flohmarkt-lurup  # Der Ordner, der die gebauten Dateien enthält
           token: ${{ secrets.GITHUB_TOKEN }}
