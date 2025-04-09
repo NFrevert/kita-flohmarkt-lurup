@@ -52,13 +52,29 @@ h1, h2, h3 {
 .white { background-color: #FFFFFF }
 .white-text { color: #FFFFFF }
 
+// .bottom {
+//   height: 50px;
+//   width: 100%;
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   background-image: url('../public/bottom.png');
+// }
 .bottom {
+  --size: 15px;
+  --R: calc(var(--size)*1.28);
+
+  -webkit-mask:
+    radial-gradient(var(--R) at 50% calc(1.8*var(--size)),#000 99%,#0000 101%) 
+      calc(50% - 2*var(--size)) 0/calc(4*var(--size)) 100%,
+    radial-gradient(var(--R) at 50% calc(-.8*var(--size)),#0000 99%,#000 101%) 
+      50% var(--size)/calc(4*var(--size)) 100% repeat-x;
+  background: linear-gradient(90deg,#5902EC,#E04DB0);
+  // background: #5902EC;
   height: 50px;
-  width: 100%;
-  position: absolute;
   bottom: 0;
-  left: 0;
-  background-image: url('../public/bottom.png');
+  position: absolute;
+  width: 100%;
 }
 
 .header {
