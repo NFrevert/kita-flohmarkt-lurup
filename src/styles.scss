@@ -1,5 +1,134 @@
-body {
-    height: 100%;
-    width: 100%;
-    background-image: url('./app/flyer.png');
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$red-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+html, body { 
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body { 
+  font-family: "Comic Neue", cursive;
+  font-weight: 500;
+  font-style: normal;
+}
+
+h1, h2, h3 {
+  font-family: "Chewy", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  @include mat.toolbar-overrides((
+    // container-background-color: #5902EC,
+    container-text-color: #5902EC,
+    title-text-font: "Chewy",
+  ));
+}
+
+.purple { background-color: #5902EC }
+.purple-text { color: #5902EC }
+.pink { background-color: #E04DB0 }
+.pink-text { color: #E04DB0 }
+.rosa { background-color: #F2C9E1 }
+.rosa-text { color: #F2C9E1 }
+.yellow { background-color: #FFFA4D }
+.yellow-text { color: #FFFA4D }
+.white { background-color: #FFFFFF }
+.white-text { color: #FFFFFF }
+
+.bottom {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: url('../public/bottom.png');
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: calc(50vw);
+  padding: 25px;
+  text-align: center;
+  width: 250px;
+}
+
+.content {
+  position: absolute;
+  top: 300px;
+  left: calc(50vw - 225px);
+  width: 450px;
+}
+
+.top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 160px;
+}
+
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 200px;
+}
+
+.top-center {
+  position: absolute;
+  top: 50px;
+  left: calc(50vw - 220px);
+  width: 200px;
+  height: 184px;
+}
+
+@media screen and (max-width: 821px) {
+  .header {
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding: 0px;
+  }
+  .top-left, .top-right {
+    display: none;
+  }
+
+  .top-center {
+    margin-left: auto;
+    margin-right: auto;
+    position:static;
+    display: block;
+    aspect-ratio: 1 / 1;
+  }
+
+  .content {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 230px;
+    padding: 10px;
+  }
+  
 }
