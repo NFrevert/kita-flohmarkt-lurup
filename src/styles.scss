@@ -68,8 +68,7 @@ h1, h2, h3 {
     radial-gradient(var(--R) at 50% calc(-.8*var(--size)),#0000 99%,#000 101%) 
       50% var(--size)/calc(4*var(--size)) 100% repeat-x;
   background: linear-gradient(90deg,#5902EC,#E04DB0);
-  // background: #5902EC;
-  height: 50px;
+  height: 60px;
   bottom: 0;
   position: absolute;
   width: 100%;
@@ -91,6 +90,8 @@ h1, h2, h3 {
   position: absolute;
   top: 300px;
   left: calc(50vw - 225px);
+  height: calc(100vh - 400px);
+  overflow: auto;
   width: 450px;
   border-radius: 25px;
   background-color: rgba(255, 255, 255, 0.9);
@@ -192,6 +193,7 @@ h1, h2, h3 {
     position: relative;
     top: 0;
     left: 0;
+    height: calc(100vh - 500px);
     margin-left: auto;
     margin-right: auto;
     max-width: 230px;
