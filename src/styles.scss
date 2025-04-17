@@ -22,7 +22,7 @@ html, body {
   margin: 0;
   padding: 0;
   
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 h1, h2, h3 {
@@ -69,35 +69,11 @@ h1, h2, h3 {
       50% var(--size)/calc(4*var(--size)) 100% repeat-x;
   background: linear-gradient(90deg,#5902EC,#E04DB0);
   height: 60px;
-  bottom: 0;
-  position: absolute;
+  position: fixed; /* Change from sticky to fixed */
+  bottom: 0; /* Always stick to the bottom of the viewport */
+  left: 0;
   width: 100%;
-}
-
-.header {
-  position: absolute;
-  top: 0;
-  left: calc(50vw);
-  padding: 25px;
-  text-align: center;
-  width: 250px;
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
-}
-
-.content {
-  position: absolute;
-  top: 300px;
-  left: calc(50vw - 225px);
-  height: calc(100vh - 400px);
-  overflow: auto;
-  width: 450px;
-  border-radius: 25px;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-  padding: 25px;
-  z-index: 1
+  z-index: 10; /* Ensure it stays above other content */
 }
 
 .top-left {
@@ -126,14 +102,38 @@ h1, h2, h3 {
   z-index: -1; /* Damit der Klecks hinter dem Inhalt liegt */
 }
 
-.top-center {
+.container {
   position: absolute;
-  top: 50px;
-  left: calc(50vw - 220px);
-  width: 200px;
-  height: 184px;
-  z-index: 1;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+  top: 0;
+  left: calc(50% - 25vw);
+  width: 50vw;
+  // height: calc(100vh - 60px);
+  padding-bottom: 68px; /* Platz für den Footer */
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.header-container {
+  display: flex;
+  gap: 8px;
+}
+
+.logo {
+  flex: 1;
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+}
+
+.header {
+  flex: 1;
+  h1, h3 {
+    text-align: center;
+  }
+}
+
+.content {
 }
 
 
@@ -169,35 +169,47 @@ h1, h2, h3 {
   }
 }
 
-@media screen and (max-width: 821px) {
-  .header {
-    left: 0;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    padding: 0px;
-  }
+@media screen and (max-width: 920px) {
   .top-left, .top-right {
     display: none;
   }
 
-  .top-center {
-    margin-left: auto;
-    margin-right: auto;
-    position:static;
-    display: block;
-    aspect-ratio: 1 / 1;
+
+  .container {
+    left: 10vw;
+    width: 80vw;
   }
 
+  .header {
+  }  
+
   .content {
-    position: relative;
-    top: 0;
-    left: 0;
-    height: calc(100vh - 500px);
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 230px;
-    padding: 10px;
   }
-  
+}
+
+@media screen and (max-width: 600px) {
+  .top-left, .top-right {
+    display: none;
+  }
+
+
+  .container {
+    left: 0;
+    width: 100%;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header {
+  }  
+
+  .content {
+    text-align: center;
+    h5 {
+      justify-content: center;
+    }
+  }
 }
