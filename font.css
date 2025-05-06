@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Chewy';
+    src: url('./Chewy-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Comic Neue';
+    src: url('./ComicNeue-Regular.woff2') format('woff2'),
+         url('./ComicNeue-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Comic Neue';
+    src: url('./ComicNeue-Bold.woff2') format('woff2'),
+         url('./ComicNeue-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Comic Neue';
+    src: url('./ComicNeue-Italic.woff2') format('woff2'),
+         url('./ComicNeue-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+  }
