@@ -43,5 +43,23 @@ matTooltip="Informationen für Verkäufer"
   storefront
 </mat-icon>
 </button>
+
+<button type="button"
+mat-icon-button
+matTooltip="Impressum"
+[routerLink]="['/Impressum']" routerLinkActive="router-link-active" >
+<mat-icon class="material-icons-outlined white-text">
+  info
+</mat-icon>
+</button>
+
+<button type="button"
+mat-icon-button
+matTooltip="Datenschutzerklärung"
+[routerLink]="['/Datenschutz']" routerLinkActive="router-link-active" >
+<mat-icon class="material-icons-outlined white-text">
+  lock
+</mat-icon>
+</button>
 </div>
 

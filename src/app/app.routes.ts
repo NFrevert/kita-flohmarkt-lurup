@@ -13,5 +13,13 @@ export const routes: Routes = [
     {
         path: 'Seller',
         loadComponent: () => import('./seller/seller.component').then(c => c.SellerComponent)
+    },
+    {
+        path: 'Impressum',
+        loadComponent: () => import('./impressum/impressum.component').then(c => c.ImpressumComponent)
+    },
+    {
+        path: 'Datenschutz',
+        loadComponent: () => import('./datenschutz/datenschutz.component').then(c => c.DatenschutzComponent)
     }
 ];
